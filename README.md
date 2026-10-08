@@ -140,9 +140,9 @@ File (SP500.csv) ──┘
 
 | Forecast Horizon | RMSE | MAE |
 |-----------------|------|-----|
-| 5 Days | 0.628 | 0.472 |
-| 10 Days | 0.962 | 0.723 |
-| 15 Days | 0.898 | 0.602 |
+| 5 Days | 0.622 | 0.482 |
+| 10 Days | 2.099 | 0.936 |
+| 15 Days | 2.122 | 0.600 |
 
 > **RMSE** = Root Mean Square Error — punishes big mistakes more heavily. Lower is better.  
 > **MAE** = Mean Absolute Error — average error in dollars. Lower is better.  
@@ -152,11 +152,11 @@ File (SP500.csv) ──┘
 
 ## Verdict — VAR Wins
 
-**VAR outperformed ARIMA at all three forecast horizons.**
+**VAR outperformed ARIMA across all three forecast horizons based on RMSE.**
 
-The biggest difference was at 10 days — ARIMA's RMSE was 2.207 while VAR's was only 0.962. VAR was more than twice as accurate. At 15 days, VAR's RMSE of 0.898 was 61% lower than ARIMA's 2.300.
+By incorporating the S&P 500 as an exogenous variable, the VAR model consistently produced lower forecasting errors. At 5 days, VAR's RMSE was 0.622 compared to ARIMA's 0.696. As the forecast horizon extended, VAR proved more stable; at 15 days, VAR achieved an RMSE of 2.122, marking an 8% reduction in error compared to ARIMA's 2.300.
 
-This makes sense — Walmart is genuinely influenced by the broader market. When the S&P 500 moves, Walmart tends to follow. By including this second variable, VAR had more useful information to work with, which led to better and more stable forecasts — especially at longer horizons.
+This makes sense — Walmart is genuinely influenced by the broader market. When the S&P 500 moves, Walmart tends to follow. By including this second variable, VAR had more useful information to work with, which led to better and more stable forecasts at longer horizons.
 
 ---
 
